@@ -19,7 +19,7 @@ contract TestBooks is Test {
         assertEq(keccak256(bytes(book.author)), keccak256(bytes("Sampath Routhu")));
         assertEq(book.pages, 100);
     }
-    
+
     function test_updatePages() public {
         // Update pages to a new value, e.g., 200
         books.update_pages(200);
