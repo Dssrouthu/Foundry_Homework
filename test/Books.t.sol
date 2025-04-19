@@ -12,7 +12,7 @@ contract TestBooks is Test {
         books = new Books("Programming Foundry", "Sampath Routhu", 100);
     }
 
-    function test_get_book() public view{
+    function test_get_book() public view {
         Books.Book memory book = books.get_book();
         // Use keccak256 for string comparisons, since assertEq cannot compare strings directly
         assertEq(keccak256(bytes(book.title)), keccak256(bytes("Programming Foundry")));
