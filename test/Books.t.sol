@@ -8,13 +8,13 @@ contract TestBooks is Test {
     Books public books;
 
     function setUp() public {
-        books = new Books("Programming Foundry", "sampath routhu", 100);
+        books = new Books("Programming Foundry", "Sampath Routhu", 100);
     }
 
-    function test_get_book() public view{
+    function test_get_book() public view {
         Books.Book memory book = books.get_book();
-        assertEq(book.title, "Programming Foundry");
-        assertEq(book.author, "sampath routhu");
+        assertEq(keccak256(bytes(book.title)), keccak256(bytes("Programming Foundry")));
+        assertEq(keccak256(bytes(book.author)), keccak256(bytes("Sampath Routhu")));
         assertEq(book.pages, 100);
     }
 
